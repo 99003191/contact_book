@@ -1,15 +1,9 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
 
 class contact_menu:
     
     def __init__ (self):
         self.opt = 0
         print("*******Contact Book********")
-    # Menu function
 
 
     def menu(self): 
