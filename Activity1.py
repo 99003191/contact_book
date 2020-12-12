@@ -30,7 +30,7 @@ class allfunct:
             if i == 4:
                 book.append(str(input("(Family/Friends/Work/Others):")))
             contbook.append(book)
-    return contbook
+        return contbook
 
     def display_all(self, contbook):
         if not contbook:
