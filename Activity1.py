@@ -1,12 +1,10 @@
-
 class contact_menu:
-    
-    def __init__ (self):
+
+    def __init__(self):
         self.opt = 0
         print("*******Contact Book********")
 
-
-    def menu(self): 
+    def menu(self):
             print("Choose an option from the following list:")
             print("1.Add a new contact")
             print("2.Remove an existing contact")
@@ -15,7 +13,8 @@ class contact_menu:
             print("5.Display all contact")
             print("6.Exit Contact Book")
             self.opt = int(input("Enter an option:"))
-        
+
+
 class allfunct:
     def add_contact(self, contbook):
         book = []
@@ -93,6 +92,7 @@ class allfunct:
             print("Invalid input")
         print(temp)
 
+
 def primaryphone_book():
     phone_book = []
     rows = int(input("Enter intial number of contacts in contact book"))
@@ -126,4 +126,3 @@ if opt == 4:
     print(cont1.search(contbook))
 if opt == 5:
     cont1.display_all(contbook)
-
