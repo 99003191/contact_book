@@ -2,11 +2,12 @@ class contact_menu:
     opt = 0
     def __init__ (self, opt):
         self.opt = opt
-        print("*******Contact Book********")
+        
     # Menu function
 
 
     def menu(self): 
+            print("*******Contact Book********")
             print("Choose an option from the following list:")
             print("1.Add a new contact")
             print("2.Remove an existing contact")
@@ -18,11 +19,9 @@ class contact_menu:
             return self.opt
 # Single Inheritance        
 class allfunct(contact_menu):
-    def __init__(self):
-        self.contbook = contbook
-    def add_contact(self):
+    def add_contact(self, contbook):
         book = []
-        for i in range(0, 4):
+        for i in range(0, 5):
             if i == 0:
                 book.append(str(input("Name:")))
             if i == 1:
@@ -33,33 +32,33 @@ class allfunct(contact_menu):
                 book.append(str(input("Email:")))
             if i == 4:
                 book.append(str(input("(Family/Friends/Work/Others):")))
-        self.contbook.append(book)
-        return self.contbook
+        contbook.append(book)
+        return contbook
 
-    def display_all(self):
-        if not self.contbook:
+    def display_all(self, contbook):
+        if not contbook:
             print("\nContact book is empty")
         else:
             for i in range(len(contbook)):
-                print(self.contbook[i])
+                print(contbook[i])
 
-    def delete_all(self):
-        return self.contbook.clear()
+    def delete_all(contbook):
+        return contbook.clear()
 
-    def delete(self):
+    def delete(contbook):
         name = str(input("Enter the name of person to delete from the book:"))
         temp = 0
-        for i in range(len(self.contbook)):
-            if name == self.contbook[i][0]:
+        for i in range(len(contbook)):
+            if name == contbook[i][0]:
                 temp += 1
                 print("The contact details of ", contbook[i][0], "is removed")
-                self.contbook.pop(i)
-                return self.contbook
+                contbook.pop(i)
+                return contbook
         if temp == 0:
                 print("Entered name is not found")
-                return self.contbook
+                return contbook
 
-    def search(self):
+    def search(self, contbook):
         print("1.Name")
         print("2.Address")
         print("3.Number")
@@ -69,29 +68,29 @@ class allfunct(contact_menu):
         temp = []
         if optn == 1:
             option = str(input("Enter the name"))
-            for i in range(len(self.contbook)):
-                if option == self.contbook[i][0]:
-                    temp.append(self.contbook[i])
+            for i in range(len(contbook)):
+                if option == contbook[i][0]:
+                    temp.append(contbook[i])
         elif optn == 2:
             option = str(input("Enter the Address"))
             for i in range(len(contbook)):
-                if option == self.contbook[i][1]:
-                    temp.append(self.contbook[i])
+                if option == contbook[i][1]:
+                    temp.append(contbook[i])
         elif optn == 3:
             option = int(input("Enter the number"))
-            for i in range(len(self.contbook)):
-                if option == int(self.contbook[i][2]):
-                    temp.append(self.contbook[i])
+            for i in range(len(contbook)):
+                if option == int(contbook[i][2]):
+                    temp.append(contbook[i])
         elif optn == 4:
             option = str(input("Enter the email"))
-            for i in range(len(self.contbook)):
-                if option == self.contbook[i][3]:
-                    temp.append(self.contbook[i])
+            for i in range(len(contbook)):
+                if option == contbook[i][3]:
+                    temp.append(contbook[i])
         elif optn == 5:
             option = str(input("Enter the category"))
-            for i in range(len(self.contbook)):
-                if option == self.contbook[i][4]:
-                    temp.append(self.contbook[i])
+            for i in range(len(contbook)):
+                if option == contbook[i][4]:
+                    temp.append(contbook[i])
         else:
             print("Invalid input")
         print(temp)
@@ -117,7 +116,8 @@ def primaryphone_book():
     return phone_book
 contbook = primaryphone_book()
 cont1 = allfunct(contbook)
-while cont1.opt < 6:
+ch = cont1.menu()
+while ch < 6:
     cont1.menu()
     cont1.opt
     if cont1.opt == 1:
