@@ -43,10 +43,10 @@ class allfunct(contact_menu):
             for i in range(len(contbook)):
                 print(contbook[i])
 
-    def delete_all(contbook):
+    def delete_all(self, contbook):
         return contbook.clear()
 
-    def delete(contbook):
+    def delete(self, contbook):
         name = str(input("Enter the name of person to delete from the book:"))
         temp = 0
         for i in range(len(contbook)):
