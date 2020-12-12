@@ -1,12 +1,11 @@
 class contact_menu:
     opt = 0
-    def __init__ (self, opt):
+
+    def __init__(self, opt):
         self.opt = opt
-        
+
     # Menu function
-
-
-    def menu(self): 
+    def menu(self):   # instance method
             print("*******Contact Book********")
             print("Choose an option from the following list:")
             print("1.Add a new contact")
@@ -17,7 +16,9 @@ class contact_menu:
             print("6.Exit Contact Book")
             self.opt = int(input("Enter an option:"))
             return self.opt
-# Single Inheritance        
+
+
+# Single Inheritance
 class allfunct(contact_menu):
     def add_contact(self, contbook):
         book = []
@@ -95,6 +96,7 @@ class allfunct(contact_menu):
             print("Invalid input")
         print(temp)
 
+
 def primaryphone_book():
     phone_book = []
     rows = int(input("Enter intial number of contacts in contact book"))
@@ -116,9 +118,14 @@ def primaryphone_book():
     return phone_book
 contbook = primaryphone_book()
 cont1 = allfunct(contbook)
+var = 0
 ch = cont1.menu()
+
 while ch < 6:
-    cont1.menu()
+
+    if(var == 1):
+        cont1.menu()
+    var = 1
     cont1.opt
     if cont1.opt == 1:
         contbook = cont1.add_contact(contbook)
