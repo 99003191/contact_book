@@ -1,10 +1,4 @@
-class contact_menu:
-
-    def __init__(self):
-        self.opt = 0
-        print("*******Contact Book********")
-
-    def menu(self):
+def menu():
             print("Choose an option from the following list:")
             print("1.Add a new contact")
             print("2.Remove an existing contact")
@@ -12,7 +6,8 @@ class contact_menu:
             print("4.Search for a contact")
             print("5.Display all contact")
             print("6.Exit Contact Book")
-            self.opt = int(input("Enter an option:"))
+            opt = int(input("Enter an option:"))
+            return opt
 
 
 class allfunct:
@@ -112,13 +107,16 @@ def primaryphone_book():
                 temp_list.append(str(input("(Family/Friends/Work/Others):")))
         phone_book.append(temp_list)
     return phone_book
-contbook = primaryphone_book
-cont1 = contact_menu()
-cont1.menu()
-cont1.opt
-if cont1.opt == 1:
+contbook = primaryphone_book()
+cont1 = allfunct()
+opt = menu()
+val = 0
+if val == 1:
+    menu()
+    val == 1
+if opt == 1:
     contbook = cont1.add_contact(contbook)
-if cont1.opt == 2:
+if opt == 2:
     contbook = cont1.delete(contbook)
 if opt == 3:
     contbook = cont1.delete_all(contbook)
