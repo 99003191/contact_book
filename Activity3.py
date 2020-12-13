@@ -34,6 +34,7 @@ class allfunct(contact_menu):
                 book.append(int(input("Contact Number:")))
             if i == 3:
                 book.append(str(input("Email:")))
+                # Regular expression
                 while re.match(r"[a-z]+@[a-z]+\.[a-z]{3}", book[3]) is None:
                     book[3] = str(input("Enter correct input format"))
             if i == 4:
@@ -117,6 +118,7 @@ def primaryphone_book():
                 temp_list.append(int(input("Contact Number:")))
             if j == 3:
                 temp_list.append(str(input("Email:")))
+                # Regular expression
                 while re.match(r"[a-z]+@[a-z]+\.[a-z]{3}",
                                temp_list[3]) is None:
                     temp_list[3] = str(input("Enter correct input format"))
